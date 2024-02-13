@@ -7,6 +7,7 @@ public class graphsDFS {
     int v;
     private ArrayList<Integer> ar[];
 
+    @SuppressWarnings("unchecked")
     graphsDFS(int v)
     {
         this.v=v;
