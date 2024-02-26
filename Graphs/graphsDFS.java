@@ -1,5 +1,4 @@
 import java.util.*;
-import java.util.Stack;
 
 // USING ARRAY OF ARRAYLIST
 
@@ -38,7 +37,21 @@ public class graphsDFS {
             }
             System.out.print(s+" ");
         }
+//           RECURSIVE
 
+//  public void dfs(int s,boolean brr[])
+//     {
+//         brr[s]=true;
+//         System.out.print(s+" ");
+//         for(int i=0;i<al.get(s).size();i++)
+//         {
+//             if(!brr[al.get(s).get(i)])
+//             {
+//                 brr[al.get(s).get(i)]=true;
+//                 dfs(al.get(s).get(i),brr);
+//             }
+//         }
+//     }
     }
     public static void main(String[] args) {
         graphsDFS g = new graphsDFS(5);
@@ -51,3 +64,4 @@ public class graphsDFS {
         g.DFS(2);
     }
 }
+
