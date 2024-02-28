@@ -1,0 +1,69 @@
+// 5
+// 3
+// 1 2
+// 2 3
+// 4  5
+
+// OUTPUT - 2
+//NO OF CONNECTED COMPONENETS IN DIRECTED GRAPH
+
+import java.util.*;
+public class noOfComponenst{
+    private static ArrayList<ArrayList<Integer>> ar = new ArrayList<>();
+    public static int v;
+    public noOfComponenst(int v)
+    {
+        this.v=v;
+        for(int i=0;i<=v;i++)
+        {
+            ar.add(new ArrayList<Integer>());
+        }
+    }
+    
+    public static void add(int n,int e)
+    {
+        ar.get(n).add(e);
+    }
+    public static void dfs(int s,boolean[] visited)
+    {
+        visited[s]=true;
+        for(int i=0;i<ar.get(s).size();i++)
+        {
+            if(!visited[ar.get(s).get(i)])
+            {
+                dfs(ar.get(s).get(i),visited);
+                
+            }
+        }
+        
+    }
+    
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        int n =sc.nextInt();
+        noOfComponenst g = new noOfComponenst(n);
+        int m =sc.nextInt();
+        LinkedHashSet<Integer> set = new LinkedHashSet<>();
+        for(int i=0;i<m;i++)
+        {
+            int a =sc.nextInt();
+            int b =sc.nextInt();
+            set.add(a);
+            set.add(b);
+        g.add(a,b);
+        }
+        int count=0;
+        boolean[] visited = new boolean[n+1];
+        int k=0;
+        for(Integer i:set)
+        {
+            if(!visited[i])
+            {
+                dfs(i,visited);
+                count++;
+            }
+        }
+        System.out.print(count);
+    }
+}
