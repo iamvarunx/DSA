@@ -11,6 +11,7 @@ import java.util.*;
 public class longestConnected{
     private static ArrayList<ArrayList<Integer>> ar = new ArrayList<>();
     public static int v;
+    @SuppressWarnings("static-access")
     public longestConnected(int v)
     {
         this.v=v;
@@ -35,6 +36,7 @@ public class longestConnected{
         }
         return count;
     }
+    @SuppressWarnings({ "static-access", "resource" })
     public static void main(String[] args)
     {
         Scanner sc = new Scanner(System.in);
