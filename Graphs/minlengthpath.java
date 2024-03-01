@@ -15,6 +15,7 @@ public class minlengthpath{
     private static ArrayList<ArrayList<Integer>> ar = new ArrayList<>();
     public static int v;
     public static int min=Integer.MAX_VALUE;
+    @SuppressWarnings("static-access")
     public minlengthpath(int v)
     {
         this.v =v;
@@ -42,6 +43,7 @@ public class minlengthpath{
         }
         vis[s]=false;
     }
+    @SuppressWarnings({ "static-access", "resource" })
     public static void main(String[] args)
     {
         Scanner sc = new Scanner(System.in);
